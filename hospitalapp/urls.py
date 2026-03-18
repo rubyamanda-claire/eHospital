@@ -7,7 +7,7 @@ from hospitalapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.home, name = 'home'),
+    path('home/', views.home, name = 'home'),
 
     path('starter/', views.starter, name = 'starter'),
 
@@ -22,5 +22,24 @@ urlpatterns = [
     path('doctors/', views.doctors, name = 'doctors'),
 
     path('contact/', views.contact, name = 'contact'),
+
+    path('show/', views.show, name = 'show'),
+
+    path('delete/<int:id>/', views.delete),
+
+    path('edit/<int:id>/', views.edit),
+
+    path('', views.register, name = 'register'),
+
+    path('login/', views.login_user, name = 'login'),
+
+    #Mpesa urls
+
+    path('pay/', views.pay, name='pay'),
+    path('stk/', views.stk, name='stk'),
+    path('token/', views.token, name='token'),
+    path('transactions/', views.transactions_list, name='transactions'),
+
 ]
+
 
